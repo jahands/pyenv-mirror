@@ -1,5 +1,6 @@
 {
   "github": {
     "autoAlias": false
-  }
+  },
+  "alias":["pyenv-mirror"]
 }
