@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,maximum-scale=2">
+    <link rel="stylesheet" type="text/css" media="screen" href="/assets/css/style.css?v=a25fa9e08315ab4378a2abf69baebd458a819177">
+
+<!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>pyenv mirror | pyenv-mirror</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="pyenv mirror" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/" />
+<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:site_name" content="pyenv-mirror" />
+<script type="application/ld+json">
+{"@type":"WebSite","name":"pyenv-mirror","url":"http://localhost:4000/","headline":"pyenv mirror","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/S0urceC0der/pyenv-mirror">View on GitHub</a>
+
+          <h1 id="project_title">pyenv-mirror</h1>
+          <h2 id="project_tagline"></h2>
+
+          
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1 id="pyenv-mirror">pyenv mirror</h1>
+
+<p>Pyenv is a simple and powerfull python version and environment management tool. Unfortuanlly python source files download speed is very slow in china during the installion of python with pyenv, so I create this mirror to speedup the download.</p>
+
+<h2 id="usage">Usage</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.now.sh/api/pythons?"
+</code></pre></div></div>
+
+<h2 id="detail">Detail</h2>
+
+<h3 id="mirror-list">Mirror List</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Origin</th>
+      <th>Mirror</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>https://www.python.org/ftp/python/</td>
+      <td>https://npm.taobao.org/mirrors/python/</td>
+    </tr>
+    <tr>
+      <td>https://ftpmirror.gnu.org/</td>
+      <td>https://mirrors.ustc.edu.cn/gnu/</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="deploy">Deploy</h3>
+
+<p>This site is deployed on <a href="https://zeit.co/home">Now.sh</a>.</p>
+
+<h3 id="url-route">Url Route</h3>
+
+<p>Pyenv download url is <code class="highlighter-rouge">${PYTHON_BUILD_MIRROR_URL}/$checksum</code>, and will redirect to <code class="highlighter-rouge">/api/pythons?/$checksum</code>. So all the request url can be handled to the python serverless function file <code class="highlighter-rouge">/api/pythons.py</code>.</p>
+
+<h3 id="build-your-own-site">Build Your Own Site</h3>
+
+<ol>
+  <li>Glone this repository to local.</li>
+  <li>Run <code class="highlighter-rouge">python build.py</code> to build local database to <code class="highlighter-rouge">/local/database.json</code>.</li>
+  <li>run <code class="highlighter-rouge">now .</code> to deploy to now.sh platform and define the alias domain.</li>
+</ol>
+
+<h2 id="todo">TODO</h2>
+
+<p>Some urls may still slow:</p>
+
+<ul>
+  <li>pypi.python.org</li>
+  <li>www.openssl.org</li>
+  <li>www.stackless.com</li>
+  <li>bitbucket.org</li>
+</ul>
+
+<h2 id="thanks">Thanks</h2>
+
+<p>Thanks to all the mirror and service provider.</p>
+
+<h2 id="history">History</h2>
+
+<p>Update at 2019-09-24.</p>
+
+<p>Report <a href="https://github.com/S0urceC0der/pyenv-mirror/issues/new">Issue</a> if new python is not avaliable.</p>
+
+<h1 id="中文文档">中文文档</h1>
+
+<p>pyenv 是一个强大的 Python 版本和虚拟环境管理工具，但是在国内使用时会经常遇到下载 Python 源码包速度特别慢的问题。虽然之前有一个镜像地址可以提高速度，但是该镜像的 Python 版本长久未更新缺少很多新版源码，因此使用了一个新的方式来实现镜像加速功能。</p>
+
+<h2 id="使用方法">使用方法</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.now.sh/api/pythons?"
+</code></pre></div></div>
+
+<h2 id="实现流程">实现流程</h2>
+
+<h3 id="镜像方案">镜像方案</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>原始 URL</th>
+      <th>镜像 URL</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>https://www.python.org/ftp/python/</td>
+      <td>https://npm.taobao.org/mirrors/python/</td>
+    </tr>
+    <tr>
+      <td>https://ftpmirror.gnu.org/</td>
+      <td>https://mirrors.ustc.edu.cn/gnu/</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="部署环境">部署环境</h3>
+
+<p>镜像网站托管在了<a href="https://zeit.co/home">Now.sh</a>上，利用了该网站提供的免费资源，因为整个过程只存在跳转信息，因此应该能够长久使用。</p>
+
+<h3 id="网站路由">网站路由</h3>
+
+<p>Pyenv 的下载地址内容为 <code class="highlighter-rouge">${PYTHON_BUILD_MIRROR_URL}/$checksum</code>，而 Now.sh 的 Serverless 函数只能一个文件对应一个路由，因此将该网址路由为 <code class="highlighter-rouge">/api/pythons?/$checksum</code>，使得所有的请求都能由 <code class="highlighter-rouge">/api/pythons.py</code> 负责处理，这也是为什么 PYTHON_BUILD_MIRROR_URL 内容的最后一个 <code class="highlighter-rouge">?</code> 是必须的。</p>
+
+<h3 id="自建流程">自建流程</h3>
+
+<ol>
+  <li>克隆本仓库</li>
+  <li>运行 <code class="highlighter-rouge">python buid.py</code> 会自动下载 pyenv 仓库并提取其中的源码网址，生成跳转数据库 <code class="highlighter-rouge">/api/database.json</code></li>
+  <li>运行 <code class="highlighter-rouge">now .</code> 接部署到 Now.sh 并自定义域名方便访问。</li>
+</ol>
+
+<h2 id="todo-1">TODO</h2>
+
+<p>仍然有一些可能下载速度慢的域名还需要处理：</p>
+
+<ul>
+  <li>pypi.python.org</li>
+  <li>www.openssl.org</li>
+  <li>www.stackless.com</li>
+  <li>bitbucket.org</li>
+</ul>
+
+<h2 id="致谢">致谢</h2>
+
+<p>感谢提供国内镜像的各大网站</p>
+
+<h2 id="更新历史">更新历史</h2>
+
+<p>2019-09-24 更新</p>
+
+<p>如果有文件没有被镜像而下载过慢，请提<a href="https://github.com/S0urceC0der/pyenv-mirror/issues/new">Issue</a>。</p>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        
+        <p class="copyright">pyenv-mirror maintained by <a href="https://github.com/S0urceC0der">S0urceC0der</a></p>
+        
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+  </body>
+</html>

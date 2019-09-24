@@ -3,6 +3,7 @@
 
 import os
 import json
+import shutil
 from urllib.parse import urlparse
 
 DATABASE = "api/database.json"
@@ -31,13 +32,13 @@ def build_database():
                     host = urlparse(url).netloc
                     host_set.add(host)
                     if host == "ftpmirror.gnu.org":
-                        url = url.replace("https://ftpmirror.gnu.org/", "https://mirrors.ustc.edu.cn/gnu")
+                        url = url.replace("https://ftpmirror.gnu.org/", "https://mirrors.ustc.edu.cn/gnu/")
                     elif host == "www.python.org":
                         url = url.replace("https://www.python.org/ftp/python/", "https://npm.taobao.org/mirrors/python/")
                     elif host == "pypi.python.org":
+                        # todo
                         # url = url.replace("https://pypi.python.org/packages/source/", "")
                         # url = "https://pypi.tuna.tsinghua.edu.cn/simple/" + url[url.find("/")+1:]
-                        # todo
                         continue
                     elif host == "www.openssl.org":
                         # print(url)
@@ -66,6 +67,7 @@ def main():
     cmd = "git clone --depth=1 " + repo
     os.system(cmd)
     build_database()
+    shutil.rmtree("pyenv")
 
 if __name__ == "__main__":
     main()
