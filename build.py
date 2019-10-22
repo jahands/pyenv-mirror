@@ -58,7 +58,7 @@ def build_database():
                     database[sha256] = url
     print(host_set)
     with open(DATABASE, "w") as f:
-        f.write(json.dumps(database))
+        f.write(json.dumps(database, indent=2))
 
 
 

@@ -1,4 +1,4 @@
-# pyenv mirror
+# Pyenv-Mirror: the pyenv's unofficial Python archives mirror
 
 Pyenv is a simple and powerfull python version and environment management tool. Unfortuanlly python source files download speed is very slow in china during the installion of python with pyenv, so I create this mirror to speedup the download. 
 
