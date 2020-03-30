@@ -4,9 +4,14 @@
 import os
 import json
 import shutil
+from datetime import datetime
 from urllib.parse import urlparse
 
+from markdown2 import Markdown
+
+
 DATABASE = "api/database.json"
+
 
 def build_database():
     current_path = os.path.realpath(os.path.dirname(__file__))
@@ -61,13 +66,31 @@ def build_database():
         f.write(json.dumps(database, indent=2))
 
 
+def build_file():
+    day = datetime.now().strftime("%Y-%m-%d")
+    with open("README.md.tpl", "r") as f:
+        tpl = f.read()
+        readme_result = tpl % (day, day)
+        with open("README.md", "w") as f_out:
+            f_out.write(readme_result)
+    markdowner = Markdown(extras=["tables"])
+    with open("index.html.tpl", "r") as f:
+        tpl = f.read()
+        with open("index.html", "w") as f_out:
+            result = markdowner.convert(readme_result)
+            result = result.replace('<p><code>', '<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>')
+            result = result.replace('</code></p>', '</code></pre></div></div>')
+            f_out.write(tpl % result)
+
 
 def main():
     repo = "https://github.com/pyenv/pyenv.git"
     cmd = "git clone --depth=1 " + repo
     os.system(cmd)
     build_database()
+    build_file()
     shutil.rmtree("pyenv")
+
 
 if __name__ == "__main__":
     main()
