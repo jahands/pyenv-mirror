@@ -46,7 +46,7 @@ Thanks to all the mirror and service provider.
 
 ## History
 
-Update at 2021-03-14.
+Update at 2021-03-15.
 
 Report [Issue](https://github.com/S0urceC0der/pyenv-mirror/issues/new) if new python is not avaliable.
 
@@ -98,6 +98,6 @@ Pyenv 的下载地址内容为 `${PYTHON_BUILD_MIRROR_URL}/$checksum`，而 Now.
 
 ## 更新历史
 
-2021-03-14 更新
+2021-03-15 更新
 
 如果有文件没有被镜像而下载过慢，请提[Issue](https://github.com/S0urceC0der/pyenv-mirror/issues/new)。
