@@ -271,6 +271,8 @@
   "d7a91f179076aaa28115ffc0a81e46c6a787785b2bc995c926fe3b02f0e9ad83": "https://downloads.python.org/pypy/pypy${PYVER}-v${VERSION}-linux64.tar.bz2#d7a91f179076aaa28115ffc0a81e46c6a787785b2bc995c926fe3b02f0e9ad83",
   "164d6a0503c83dd328e1a6bf7fcb2b2e977c1d27c6fcc491a7174fd37bc32a12": "https://downloads.python.org/pypy/pypy${PYVER}-v${VERSION}-aarch64.tar.bz2#164d6a0503c83dd328e1a6bf7fcb2b2e977c1d27c6fcc491a7174fd37bc32a12",
   "fd457bfeaf54aa69417b6aa4817df40e702dc8aaaf7e83ba005d391a1bddfa96": "https://downloads.python.org/pypy/pypy${PYVER}-v${VERSION}-osx64.tar.bz2#fd457bfeaf54aa69417b6aa4817df40e702dc8aaaf7e83ba005d391a1bddfa96",
+  "c171663351fadef1759aef1dd5220ff69ccd76affb6d0aa719f90c63509b6aa8": "https://npm.taobao.org/mirrors/python/3.10.0/Python-3.10.0b2.tar.xz#c171663351fadef1759aef1dd5220ff69ccd76affb6d0aa719f90c63509b6aa8",
+  "ac678e44e522c0b769398f64fccda917f24a97d310e492d98989377f8865bac1": "https://npm.taobao.org/mirrors/python/3.10.0/Python-3.10.0b2.tgz#ac678e44e522c0b769398f64fccda917f24a97d310e492d98989377f8865bac1",
   "e522ea7ca51b16ee5505f22b86803664b762a263a6d69ba84c359fcf8365ad3e": "https://downloads.python.org/pypy/pypy2-v5.7.0-src.tar.bz2#e522ea7ca51b16ee5505f22b86803664b762a263a6d69ba84c359fcf8365ad3e",
   "76d666e5aee54b519d6ec1af4ef0cbdc85f7f9276dd554e97deb026adfd0c936": "https://downloads.python.org/pypy/pypy2.7-v7.2.0-linux32.tar.bz2#76d666e5aee54b519d6ec1af4ef0cbdc85f7f9276dd554e97deb026adfd0c936",
   "05acf28e6a243026ecad933b9361d8f74b41f00818071b76b38c4694cc4c9599": "https://downloads.python.org/pypy/pypy2.7-v7.2.0-linux64.tar.bz2#05acf28e6a243026ecad933b9361d8f74b41f00818071b76b38c4694cc4c9599",
@@ -622,8 +624,6 @@
   "45ed8bf799d0fd8eb051cbcc427173fba74dc9c2f6c309d7a3cc90f4917e6a10": "https://downloads.python.org/pypy/pypy-5.0.0-osx64.tar.bz2#45ed8bf799d0fd8eb051cbcc427173fba74dc9c2f6c309d7a3cc90f4917e6a10",
   "c3fee607d20a77dfb72ea2e627eb4d95d25c735603435abde62c57015a0445bd": "https://npm.taobao.org/mirrors/python/2.5.3/Python-2.5.3.tgz#c3fee607d20a77dfb72ea2e627eb4d95d25c735603435abde62c57015a0445bd",
   "71c3139908ccc1c544ba1e331a3c22b3f1c09f562438a054fd6f4e2628de8b9a": "https://npm.taobao.org/mirrors/python/3.2.4/Python-3.2.4.tgz#71c3139908ccc1c544ba1e331a3c22b3f1c09f562438a054fd6f4e2628de8b9a",
-  "a30c55b26a91f4c76392ba2b2e87c2d591fdb2b36f7b58d39fe90bd400fef1a3": "https://npm.taobao.org/mirrors/python/3.10.0/Python-3.10.0b1.tar.xz#a30c55b26a91f4c76392ba2b2e87c2d591fdb2b36f7b58d39fe90bd400fef1a3",
-  "a44c4726948689fe22f3edf30f11bf361d4536b38738ca955747eb5860c2dc93": "https://npm.taobao.org/mirrors/python/3.10.0/Python-3.10.0b1.tgz#a44c4726948689fe22f3edf30f11bf361d4536b38738ca955747eb5860c2dc93",
   "74d3c1e79f3fc7d384ffb32d3d2a95c2d5f61b81091eccce12ac76030d96ad08": "https://downloads.python.org/pypy/pypy3.7-v7.3.4-src.tar.bz2#74d3c1e79f3fc7d384ffb32d3d2a95c2d5f61b81091eccce12ac76030d96ad08",
   "b051a71ea5b4fa27d0a744b28e6054661adfce8904dcc82500716b5edff5ce4b": "https://downloads.python.org/pypy/pypy2.7-v7.1.0-src.tar.bz2#b051a71ea5b4fa27d0a744b28e6054661adfce8904dcc82500716b5edff5ce4b"
 }
