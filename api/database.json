@@ -535,6 +535,8 @@
   "fd71f2bef69c342e492239c2de04a67676bbc08b262d31948bef9e1385a44646": "https://bitbucket-archive.softwareheritage.org/static/14/140b7b14-aa94-424e-b191-9cd3438381f7/attachments/pypy-7.0.0-linux_x86_64-portable.tar.bz2#fd71f2bef69c342e492239c2de04a67676bbc08b262d31948bef9e1385a44646",
   "e7ecb029d9c7a59388838fc4820a50a2f5bee6536010031060e3dfa882730dc8": "https://downloads.python.org/pypy/pypy2.7-v7.0.0-osx64.tar.bz2#e7ecb029d9c7a59388838fc4820a50a2f5bee6536010031060e3dfa882730dc8",
   "9252ccaa130094205b3c7f0a2cad5adc0d9dfba31658ff3172f788dec1fdb348": "https://downloads.python.org/pypy/pypy${PYVER}-v${VERSION}-src.tar.bz2#9252ccaa130094205b3c7f0a2cad5adc0d9dfba31658ff3172f788dec1fdb348",
+  "06828c04a573c073a4e51c4292a27c1be4ae26621c3edc7cf9318418ce3b6d27": "https://npm.taobao.org/mirrors/python/3.9.9/Python-3.9.9.tar.xz#06828c04a573c073a4e51c4292a27c1be4ae26621c3edc7cf9318418ce3b6d27",
+  "2cc7b67c1f3f66c571acc42479cdf691d8ed6b47bee12c9b68430413a17a44ea": "https://npm.taobao.org/mirrors/python/3.9.9/Python-3.9.9.tgz#2cc7b67c1f3f66c571acc42479cdf691d8ed6b47bee12c9b68430413a17a44ea",
   "99c6860b70977befa1590029fae092ddb18db1d69ae67e8b9385b66ed104ba58": "https://npm.taobao.org/mirrors/python/2.7.6/Python-2.7.6.tgz#99c6860b70977befa1590029fae092ddb18db1d69ae67e8b9385b66ed104ba58",
   "44ec91e8cb01caab289d8763c203f3aaf288d14325a6c42692bd1ac4e870d758": "https://downloads.python.org/pypy/pypy2.7-v7.1.0-linux32.tar.bz2#44ec91e8cb01caab289d8763c203f3aaf288d14325a6c42692bd1ac4e870d758",
   "fef176a29a2ef068c00c8098e59dab935ca6e956f089672b3f7351da95a034f5": "https://downloads.python.org/pypy/pypy2.7-v7.1.0-linux64.tar.bz2#fef176a29a2ef068c00c8098e59dab935ca6e956f089672b3f7351da95a034f5",
