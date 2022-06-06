@@ -585,6 +585,8 @@
   "a1a84882525dd574c4b051b66e9b7ef0e132392acc2f729420d7825f96835216": "https://downloads.python.org/pypy/pypy${PYVER}-v${VERSION}-aarch64.tar.bz2#a1a84882525dd574c4b051b66e9b7ef0e132392acc2f729420d7825f96835216",
   "edc9df7d0f7c56f7ee05b24117bdb6c03aa65e768471e210c05ccdbbfd11a866": "https://downloads.python.org/pypy/pypy${PYVER}-v${VERSION}-osx64.tar.bz2#edc9df7d0f7c56f7ee05b24117bdb6c03aa65e768471e210c05ccdbbfd11a866",
   "7f91efc65a69e727519cc885ca6351f4bfdd6b90580dced2fdcc9ae1bf10013b": "https://downloads.python.org/pypy/pypy${PYVER}-v${VERSION}-s390x.tar.bz2#7f91efc65a69e727519cc885ca6351f4bfdd6b90580dced2fdcc9ae1bf10013b",
+  "8437efd5b106ef0a75aabfbf23d880625120a73a86a22ade4d2e2e68d7b74486": "https://npm.taobao.org/mirrors/python/3.10.5/Python-3.10.5.tar.xz#8437efd5b106ef0a75aabfbf23d880625120a73a86a22ade4d2e2e68d7b74486",
+  "18f57182a2de3b0be76dfc39fdcfd28156bb6dd23e5f08696f7492e9e3d0bf2d": "https://npm.taobao.org/mirrors/python/3.10.5/Python-3.10.5.tgz#18f57182a2de3b0be76dfc39fdcfd28156bb6dd23e5f08696f7492e9e3d0bf2d",
   "7d81b8e9fcd07c067cfe2f519ab770ec62928ee8787f952cadf2d2786246efc8": "https://downloads.python.org/pypy/pypy${PYVER}-v${VERSION}-linux32.tar.bz2#7d81b8e9fcd07c067cfe2f519ab770ec62928ee8787f952cadf2d2786246efc8",
   "37e2804c4661c86c857d709d28c7de716b000d31e89766599fdf5a98928b7096": "https://downloads.python.org/pypy/pypy${PYVER}-v${VERSION}-linux64.tar.bz2#37e2804c4661c86c857d709d28c7de716b000d31e89766599fdf5a98928b7096",
   "ee4aa041558b58de6063dd6df93b3def221c4ca4c900d6a9db5b1b52135703a8": "https://downloads.python.org/pypy/pypy${PYVER}-v${VERSION}-aarch64.tar.bz2#ee4aa041558b58de6063dd6df93b3def221c4ca4c900d6a9db5b1b52135703a8",
