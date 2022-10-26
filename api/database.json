@@ -104,7 +104,7 @@
   "1573c9284d3ec236c8e6ef3b954753932dff29462c54b5885b761d1ee68b6e05": "https://downloads.python.org/pypy/pypy-5.0.1-src.tar.bz2#1573c9284d3ec236c8e6ef3b954753932dff29462c54b5885b761d1ee68b6e05",
   "3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35": "https://mirrors.ustc.edu.cn/gnu/readline/readline-8.2.tar.gz#3feb7171f16a84ee82ca18a36d7b9be109a52c04f492a053331d7d1095007c35",
   "a57dc82d77358617ba65b9841cee1e3b441f386c3789ddc0676eca077f2951c3": "https://npm.taobao.org/mirrors/python/3.11.0/Python-3.11.0.tar.xz#a57dc82d77358617ba65b9841cee1e3b441f386c3789ddc0676eca077f2951c3",
-  "20d77729a64b2a300f08717f7ffcb8da189d02e7c51e6e4a06c0340b619cbf32": "https://npm.taobao.org/mirrors/python/3.11.0/Python-3.11.0.tgz#20d77729a64b2a300f08717f7ffcb8da189d02e7c51e6e4a06c0340b619cbf32",
+  "64424e96e2457abbac899b90f9530985b51eef2905951febd935f0e73414caeb": "https://npm.taobao.org/mirrors/python/3.11.0/Python-3.11.0.tgz#64424e96e2457abbac899b90f9530985b51eef2905951febd935f0e73414caeb",
   "2ed02ac9e710859c41bc82deafb08619792bb9a27eeaa1676c741ededd214dd7": "https://downloads.python.org/pypy/pypy${PYVER}-v${VERSION}-src.tar.bz2#2ed02ac9e710859c41bc82deafb08619792bb9a27eeaa1676c741ededd214dd7",
   "31b3066c9739b117d6bb1bdc485a919dc3b67370ec00437de1b74069943f7f17": "https://downloads.python.org/pypy/pypy-2.1-src.tar.bz2#31b3066c9739b117d6bb1bdc485a919dc3b67370ec00437de1b74069943f7f17",
   "22d9b1ac5b26135ad2b8c2901a9413537e08749a753356ee913c84dbd2df5574": "https://npm.taobao.org/mirrors/python/2.7.15/Python-2.7.15.tar.xz#22d9b1ac5b26135ad2b8c2901a9413537e08749a753356ee913c84dbd2df5574",
