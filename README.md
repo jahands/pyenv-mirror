@@ -5,7 +5,7 @@ Pyenv is a simple and powerfull python version and environment management tool. 
 ## Usage
 
 ```
-export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.now.sh/api/pythons?"
+export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.vercel.app/api/pythons?"
 ```
 
 ## Detail
@@ -19,7 +19,7 @@ export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.now.sh/api/pythons?"
 
 ### Deploy
 
-This site is deployed on [Now.sh](https://zeit.co/home).
+This site is deployed on <del> [Now.sh](https://zeit.co/home) </del> [vercel](https://vercel.com/).
 
 ### Url Route
 
@@ -71,7 +71,7 @@ export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.now.sh/api/pythons?"
 
 ### 部署环境
 
-镜像网站托管在了[Now.sh](https://zeit.co/home)上，利用了该网站提供的免费资源，因为整个过程只存在跳转信息，因此应该能够长久使用。
+镜像网站托管在了<del>[Now.sh](https://zeit.co/home)</del>  [vercel](https://vercel.com/) 上，利用了该网站提供的免费资源，因为整个过程只存在跳转信息，因此应该能够长久使用。
 
 ### 网站路由
 
