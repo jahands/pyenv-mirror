@@ -5,7 +5,7 @@ Pyenv is a simple and powerfull python version and environment management tool. 
 ## Usage
 
 ```
-export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.vercel.app/api/pythons?"
+export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.now.sh/api/pythons?"
 ```
 
 ## Detail
@@ -19,7 +19,7 @@ export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.vercel.app/api/pythons?"
 
 ### Deploy
 
-This site is deployed on <del> [Now.sh](https://zeit.co/home) </del> [vercel](https://vercel.com/).
+This site is deployed on [Now.sh](https://zeit.co/home).
 
 ### Url Route
 
@@ -46,7 +46,7 @@ Thanks to all the mirror and service provider.
 
 ## History
 
-Update at 2023-05-21.
+Update at 2023-05-22.
 
 Report [Issue](https://github.com/S0urceC0der/pyenv-mirror/issues/new) if new python is not avaliable.
 
@@ -71,7 +71,7 @@ export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.now.sh/api/pythons?"
 
 ### 部署环境
 
-镜像网站托管在了<del>[Now.sh](https://zeit.co/home)</del>  [vercel](https://vercel.com/) 上，利用了该网站提供的免费资源，因为整个过程只存在跳转信息，因此应该能够长久使用。
+镜像网站托管在了[Now.sh](https://zeit.co/home)上，利用了该网站提供的免费资源，因为整个过程只存在跳转信息，因此应该能够长久使用。
 
 ### 网站路由
 
@@ -98,6 +98,6 @@ Pyenv 的下载地址内容为 `${PYTHON_BUILD_MIRROR_URL}/$checksum`，而 Now.
 
 ## 更新历史
 
-2023-05-21 更新
+2023-05-22 更新
 
 如果有文件没有被镜像而下载过慢，请提[Issue](https://github.com/S0urceC0der/pyenv-mirror/issues/new)。
