@@ -5,7 +5,7 @@ Pyenv is a simple and powerfull python version and environment management tool. 
 ## Usage
 
 ```
-export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.vercel.app/api/files?sha2="
+export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.now.sh/api/pythons?"
 ```
 
 ## Detail
@@ -14,16 +14,16 @@ export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.vercel.app/api/files?sha2="
 
 |Origin|Mirror|
 |---|---|
-|https://www.python.org/ftp/python/|https://registry.npmmirror.com/binary.html?path=python/|
+|https://www.python.org/ftp/python/|https://npm.taobao.org/mirrors/python/|
 |https://ftpmirror.gnu.org/|https://mirrors.ustc.edu.cn/gnu/|
 
 ### Deploy
 
-This site is deployed on [vercel](https://vercel.com/).
+This site is deployed on [Now.sh](https://zeit.co/home).
 
 ### Url Route
 
-Pyenv download url is `${PYTHON_BUILD_MIRROR_URL}/$checksum`, and will redirect to `/api/files?sha2=$checksum`. So all the request url can be handled to the python serverless function file `/api/files.js`.
+Pyenv download url is `${PYTHON_BUILD_MIRROR_URL}/$checksum`, and will redirect to `/api/pythons?/$checksum`. So all the request url can be handled to the python serverless function file `/api/pythons.py`.
 
 ### Build Your Own Site
 
@@ -57,7 +57,7 @@ pyenv 是一个强大的 Python 版本和虚拟环境管理工具，但是在国
 ## 使用方法
 
 ```
-export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.vercel.app/api/files?sha2="
+export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.now.sh/api/pythons?"
 ```
 
 ## 实现流程
@@ -66,16 +66,16 @@ export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.vercel.app/api/files?sha2="
 
 |原始 URL |镜像 URL|
 |---|---|
-|https://www.python.org/ftp/python/|https://registry.npmmirror.com/binary.html?path=python/|
+|https://www.python.org/ftp/python/|https://npm.taobao.org/mirrors/python/|
 |https://ftpmirror.gnu.org/|https://mirrors.ustc.edu.cn/gnu/|
 
 ### 部署环境
 
-镜像网站托管在了[vercel](https://vercel.com/)上，利用了该网站提供的免费资源，因为整个过程只存在跳转信息，因此应该能够长久使用。
+镜像网站托管在了[Now.sh](https://zeit.co/home)上，利用了该网站提供的免费资源，因为整个过程只存在跳转信息，因此应该能够长久使用。
 
 ### 网站路由
 
-Pyenv 的下载地址内容为 `${PYTHON_BUILD_MIRROR_URL}/$checksum`，而 Now.sh 的 Serverless 函数只能一个文件对应一个路由，因此将该网址路由为 `/api/files?sha2=$checksum`，使得所有的请求都能由 `/api/pythons.py` 负责处理，这也是为什么 PYTHON_BUILD_MIRROR_URL 内容的最后一个 `?` 是必须的。
+Pyenv 的下载地址内容为 `${PYTHON_BUILD_MIRROR_URL}/$checksum`，而 Now.sh 的 Serverless 函数只能一个文件对应一个路由，因此将该网址路由为 `/api/pythons?/$checksum`，使得所有的请求都能由 `/api/pythons.py` 负责处理，这也是为什么 PYTHON_BUILD_MIRROR_URL 内容的最后一个 `?` 是必须的。
 
 ### 自建流程
 
