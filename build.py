@@ -39,7 +39,7 @@ def build_database():
                     if host == "ftpmirror.gnu.org":
                         url = url.replace("https://ftpmirror.gnu.org/", "https://mirrors.ustc.edu.cn/gnu/")
                     elif host == "www.python.org":
-                        url = url.replace("https://www.python.org/ftp/python/", "https://npm.taobao.org/mirrors/python/")
+                        url = url.replace("https://www.python.org/ftp/python/", "https://registry.npmmirror.com/-/binary/python/")
                     elif host == "pypi.python.org":
                         # todo
                         # url = url.replace("https://pypi.python.org/packages/source/", "")
