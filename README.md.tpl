@@ -5,7 +5,7 @@ Pyenv is a simple and powerfull python version and environment management tool. 
 ## Usage
 
 ```
-export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.vercel.app/api/files?sha2="
+export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.vercel.app/api/pythons/"
 ```
 
 ## Detail
@@ -57,7 +57,7 @@ pyenv 是一个强大的 Python 版本和虚拟环境管理工具，但是在国
 ## 使用方法
 
 ```
-export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.vercel.app/api/files?sha2="
+export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.vercel.app/api/pythons"
 ```
 
 ## 实现流程
