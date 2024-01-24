@@ -5,7 +5,7 @@ Pyenv is a simple and powerfull python version and environment management tool. 
 ## Usage
 
 ```
-export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.now.sh/api/pythons?"
+export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.vercel.app/api/files?sha2="
 ```
 
 ## Detail
@@ -14,12 +14,12 @@ export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.now.sh/api/pythons?"
 
 |Origin|Mirror|
 |---|---|
-|https://www.python.org/ftp/python/|https://npm.taobao.org/mirrors/python/|
+|https://www.python.org/ftp/python/|https://registry.npmmirror.com/binary.html?path=python/|
 |https://ftpmirror.gnu.org/|https://mirrors.ustc.edu.cn/gnu/|
 
 ### Deploy
 
-This site is deployed on [Now.sh](https://zeit.co/home).
+This site is deployed on [vercel](https://vercel.com/).
 
 ### Url Route
 
@@ -46,7 +46,7 @@ Thanks to all the mirror and service provider.
 
 ## History
 
-Update at 2024-01-23.
+Update at 2024-01-24.
 
 Report [Issue](https://github.com/S0urceC0der/pyenv-mirror/issues/new) if new python is not avaliable.
 
@@ -57,7 +57,7 @@ pyenv 是一个强大的 Python 版本和虚拟环境管理工具，但是在国
 ## 使用方法
 
 ```
-export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.now.sh/api/pythons?"
+export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.vercel.app/api/files?sha2="
 ```
 
 ## 实现流程
@@ -66,12 +66,12 @@ export PYTHON_BUILD_MIRROR_URL="https://pyenv-mirror.now.sh/api/pythons?"
 
 |原始 URL |镜像 URL|
 |---|---|
-|https://www.python.org/ftp/python/|https://npm.taobao.org/mirrors/python/|
+|https://www.python.org/ftp/python/|https://registry.npmmirror.com/binary.html?path=python/|
 |https://ftpmirror.gnu.org/|https://mirrors.ustc.edu.cn/gnu/|
 
 ### 部署环境
 
-镜像网站托管在了[Now.sh](https://zeit.co/home)上，利用了该网站提供的免费资源，因为整个过程只存在跳转信息，因此应该能够长久使用。
+镜像网站托管在了[vercel](https://vercel.com/)上，利用了该网站提供的免费资源，因为整个过程只存在跳转信息，因此应该能够长久使用。
 
 ### 网站路由
 
@@ -98,6 +98,6 @@ Pyenv 的下载地址内容为 `${PYTHON_BUILD_MIRROR_URL}/$checksum`，而 Now.
 
 ## 更新历史
 
-2024-01-23 更新
+2024-01-24 更新
 
 如果有文件没有被镜像而下载过慢，请提[Issue](https://github.com/S0urceC0der/pyenv-mirror/issues/new)。
