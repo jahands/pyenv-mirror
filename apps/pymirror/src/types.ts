@@ -1,17 +1,13 @@
 import { z } from 'zod'
-import { HonoApp } from '@repo/hono-helpers'
-import { SharedHonoBindings, SharedHonoVariables } from '@repo/hono-helpers/src/types'
 
-export type Bindings = SharedHonoBindings & {
-	// axiom: workers-general 1P-72dx8
-
+export type Bindings = {
 	R2: R2Bucket
 }
 
 /** Variables can be extended */
-export type Variables = SharedHonoVariables
+export type Variables = {}
 
-export interface App extends HonoApp {
+export interface App {
 	Bindings: Bindings
 	Variables: Variables
 }
