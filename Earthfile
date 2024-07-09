@@ -5,7 +5,14 @@ prepare-workspace:
 	FROM --platform=linux/amd64 node:20-bookworm-slim
 	WORKDIR /work
 	RUN apt-get update \
-		&& apt-get install -y curl jq git unzip \
+		&& apt-get install -y \
+      jq \
+      git \
+      curl \
+      unzip \
+      python3 \
+      python3-pip \
+      pipx \
 		&& rm -rf /var/lib/apt/lists/*
 	RUN curl -fsSL https://sh.uuid.rocks/install/rclone.sh | bash
 	LET BUN_INSTALL=/usr/local
@@ -18,15 +25,21 @@ setup-project:
 	FROM +prepare-workspace
 	COPY . .
 
-install-deps:
+install-node-deps:
 	FROM +setup-project
 	CACHE /pnpm-store
 	RUN pnpm config set store-dir /pnpm-store
 	RUN pnpm install --frozen-lockfile --child-concurrency=10
 
+build-pyenv-db:
+  FROM +setup-project
+  RUN python3 build.py
+  SAVE ARTIFACT api/database.json AS LOCAL api/database.json
+
 sync-pyenv-db:
-  FROM +install-deps
+  FROM +build-pyenv-db
   RUN --push \
     --secret RCLONE_S3_ACCESS_KEY_ID \
 		--secret RCLONE_S3_SECRET_ACCESS_KEY \
-    bun run apps/cli/src/index.ts sync
+    rclone --config apps/cli/rclone.conf \
+      copyto api/database.json r2:pymirror/api/database.json

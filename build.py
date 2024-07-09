@@ -7,8 +7,6 @@ import shutil
 from datetime import datetime
 from urllib.parse import urlparse
 
-from markdown2 import Markdown
-
 
 DATABASE = "api/database.json"
 
@@ -37,9 +35,11 @@ def build_database():
                     host = urlparse(url).netloc
                     host_set.add(host)
                     if host == "ftpmirror.gnu.org":
-                        url = url.replace("https://ftpmirror.gnu.org/", "https://mirrors.ustc.edu.cn/gnu/")
+                        # url = url.replace("https://ftpmirror.gnu.org/", "https://mirrors.ustc.edu.cn/gnu/")
+                        continue
                     elif host == "www.python.org":
-                        url = url.replace("https://www.python.org/ftp/python/", "https://registry.npmmirror.com/-/binary/python/")
+                        # url = url.replace("https://www.python.org/ftp/python/", "https://registry.npmmirror.com/-/binary/python/")
+                        continue
                     elif host == "pypi.python.org":
                         # todo
                         # url = url.replace("https://pypi.python.org/packages/source/", "")
@@ -67,20 +67,7 @@ def build_database():
 
 
 def build_file():
-    day = datetime.now().strftime("%Y-%m-%d")
-    with open("README.md.tpl", "r") as f:
-        tpl = f.read()
-        readme_result = tpl % (day, day)
-        with open("README.md", "w") as f_out:
-            f_out.write(readme_result)
-    markdowner = Markdown(extras=["tables"])
-    with open("index.html.tpl", "r") as f:
-        tpl = f.read()
-        with open("index.html", "w") as f_out:
-            result = markdowner.convert(readme_result)
-            result = result.replace('<p><code>', '<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>')
-            result = result.replace('</code></p>', '</code></pre></div></div>')
-            f_out.write(tpl % result)
+    pass
 
 
 def main():

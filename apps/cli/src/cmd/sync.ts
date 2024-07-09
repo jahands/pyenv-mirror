@@ -10,7 +10,7 @@ export const syncCmd = new Command('sync')
 			'-v',
 			'copyto',
 			`${repoRoot}/api/database.json`,
-			'r2:pyenv-mirror/api/database.json',
+			'r2:pymirror/api/database.json',
 		].flat()
 
 		await $({
