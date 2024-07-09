@@ -38,7 +38,7 @@ jobs:
           git config --local user.name "GitHub Action"
           git diff --quiet || git commit -m "Update python version" -a
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v0.8.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: master
+          branch: main
