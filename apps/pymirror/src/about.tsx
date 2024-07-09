@@ -24,8 +24,8 @@ const HomePage: FC = () => {
 						source files by caching with{' '}
 						<a href="https://www.cloudflare.com/products/cache-reserve/">
 							Cloudflare Cache Reserve
-						</a>
-						.
+						</a>{' '}
+						using <a href="https://workers.cloudflare.com/">Cloudflare Workers</a>.
 					</p>
 					<h2>Usage</h2>
 					<p>
@@ -51,6 +51,18 @@ const Layout: FC = (props) => {
 		<html>
 			<head>
 				<title>PyMirror</title>
+				<meta charset="UTF-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<link rel="stylesheet" href="styles.css" />
+				{/* <!-- Open Graph Meta Tags --> */}
+				<meta property="og:title" content="PyMirror" />
+				<meta
+					property="og:description"
+					content="Unofficial pyenv mirror hosted on Cloudflare Workers"
+				/>
+				{/* <meta property="og:image" content="https://yourwebsite.com/path-to-your-image.jpg"> */}
+				<meta property="og:url" content="https://pymirror.com" />
+				<meta property="og:type" content="website" />
 				<Style>{css`
 					/* Global Styles */
 					body {
