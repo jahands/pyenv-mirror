@@ -48,6 +48,15 @@ export const buildCmd = new Command('build')
 							}
 							url = url.replaceAll('${PYVER}', stripQuotes(pyver.split('=')[1]))
 						}
+						const { hostname } = new URL(url)
+						if (hostname === 'ftpmirror.gnu.org') {
+							url = url.replace('https://ftpmirror.gnu.org/', 'https://mirrors.ustc.edu.cn/gnu/')
+						} else if (hostname === 'www.python.org') {
+							url = url.replace(
+								'https://www.python.org/ftp/python/',
+								'https://registry.npmmirror.com/-/binary/python/'
+							)
+						}
 						const sha256 = url.split('#')[1]
 						db[sha256] = url
 					}
