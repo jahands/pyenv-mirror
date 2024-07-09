@@ -33,7 +33,8 @@ install-node-deps:
 
 build-pyenv-db:
   FROM +install-node-deps
-  RUN python3 build.py
+  # RUN python3 build.py
+  RUN bun run apps/cli/src/index.ts build
   RUN bun run apps/cli/src/index.ts verify
   SAVE ARTIFACT api/database.json AS LOCAL api/database.json
 
