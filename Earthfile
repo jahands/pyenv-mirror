@@ -13,3 +13,20 @@ prepare-workspace:
 
 	RUN corepack prepare pnpm@latest-9 --activate
 	RUN corepack enable pnpm
+
+setup-project:
+	FROM +prepare-workspace
+	COPY . .
+
+install-deps:
+	FROM +setup-project
+	CACHE /pnpm-store
+	RUN pnpm config set store-dir /pnpm-store
+	RUN pnpm install --frozen-lockfile --child-concurrency=10
+
+sync-pyenv-mirror:
+  FROM +install-deps
+  RUN --push \
+    --secret RCLONE_S3_ACCESS_KEY_ID \
+		--secret RCLONE_S3_SECRET_ACCESS_KEY \
+    bun run apps/cli/src/index.ts sync

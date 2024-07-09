@@ -5,9 +5,17 @@ export const syncCmd = new Command('sync')
 	.description('Synchronize pyenv database to R2')
 	.action(async () => {
 		const repoRoot = await getRepoRoot()
+		const args = [
+			['--config', `${repoRoot}/apps/cli/rclone.conf`],
+			'-v',
+			'copyto',
+			`${repoRoot}/api/database.json`,
+			'r2:pyenv-mirror/api/database.json',
+		].flat()
+
 		await $({
 			verbose: true,
-		})`rclone -v copyto ${repoRoot}/api/database.json r2:pyenv-mirror/api/database.json`
+		})`rclone ${args}`
 	})
 
 async function getRepoRoot() {
