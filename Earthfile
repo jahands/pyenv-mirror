@@ -24,7 +24,7 @@ install-deps:
 	RUN pnpm config set store-dir /pnpm-store
 	RUN pnpm install --frozen-lockfile --child-concurrency=10
 
-sync-pyenv-mirror:
+sync-pyenv-db:
   FROM +install-deps
   RUN --push \
     --secret RCLONE_S3_ACCESS_KEY_ID \
