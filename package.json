@@ -1,0 +1,19 @@
+{
+	"name": "pyenv-mirror",
+	"version": "0.1.0",
+	"private": true,
+	"sideEffects": false,
+	"scripts": {
+	},
+	"devDependencies": {
+	},
+	"packageManager": "pnpm@9.4.0",
+	"pnpm": {
+		"overrides": {
+			"@types/node": "18.15.3"
+		}
+	},
+	"volta": {
+		"node": "20.11.1"
+	}
+}

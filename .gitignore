@@ -128,3 +128,7 @@ dmypy.json
 .pyre/
 
 .now
+
+# Other
+.DS_Store
+node_modules
