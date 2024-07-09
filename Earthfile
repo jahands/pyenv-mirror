@@ -36,13 +36,16 @@ build-pyenv-db:
   # RUN python3 build.py
   RUN bun run apps/cli/src/index.ts build
   RUN bun run apps/cli/src/index.ts verify
+  SAVE ARTIFACT api/database.json
   SAVE ARTIFACT api/database.json AS LOCAL api/database.json
 
 sync-pyenv-db:
-  FROM +build-pyenv-db
+  FROM +install-node-deps
+  BUILD +build-pyenv-db
+  COPY +build-pyenv-db/database.json .
   RUN --push \
     --secret RCLONE_S3_ACCESS_KEY_ID \
 		--secret RCLONE_S3_SECRET_ACCESS_KEY \
     rclone --config apps/cli/rclone.conf \
       --s3-no-check-bucket \
-      copyto api/database.json r2:pymirror/api/database.json
+      copyto database.json r2:pymirror/api/database.json

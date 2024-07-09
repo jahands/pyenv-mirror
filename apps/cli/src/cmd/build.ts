@@ -1,12 +1,14 @@
 import { Command } from '@commander-js/extra-typings'
 import { z } from 'zod'
 import { getRepoRoot } from '../config'
+import { resolveScriptVars, stripQuotes } from '../var-resolver'
 
 export const buildCmd = new Command('build')
 	.description('Build pyenv database')
 	.action(async () => {
 		const repoRoot = await getRepoRoot()
 		cd(repoRoot)
+		let foundCount = 0
 		try {
 			const dbPath = `${repoRoot}/api/database.json`
 			const db: PyMirrorDB = {}
@@ -19,63 +21,44 @@ export const buildCmd = new Command('build')
 			for (const file of files) {
 				z.string().startsWith('/').parse(file)
 				const fileContents = await fs.readFile(file, 'utf-8')
-				const lines = fileContents.split('\n')
+
+				// Some files have variables in them, so we need to resolve them
+				const script = resolveScriptVars(fileContents)
+				const lines = script
+					.split('\n')
+					.map((line) => line.trim())
+					.filter((line) => line.startsWith('install_package'))
+
 				for (let line of lines) {
-					line = line.trim()
-					if (!line.startsWith('install_package')) {
+					let url = line
+						.split(' ')
+						.map((block) => stripQuotes(block).trim())
+						.find((block) => block.startsWith('https') && block.includes('#'))
+					if (!url) {
 						continue
 					}
-					for (let block of line.split(' ')) {
-						block = stripQuotes(block).trim()
-						if (!block.startsWith('https')) {
-							continue
-						}
-						let url = block
-						if (!url.includes('#')) {
-							continue
-						}
-						if (url.includes('${VERSION}')) {
-							const version = PyVersion.safeParse(lines.find((line) => line.startsWith('VERSION=')))
-							if (!version.success) {
-								continue
-							}
-							url = url.replaceAll('${VERSION}', stripQuotes(version.data.split('=')[1]))
-						}
-						if (url.includes('${PYVER}')) {
-							const pyver = PyVer.safeParse(lines.find((line) => line.startsWith('PYVER=')))
-							if (!pyver.success) {
-								continue
-							}
-							url = url.replaceAll('${PYVER}', stripQuotes(pyver.data.split('=')[1]))
-						}
-						const { hostname } = new URL(url)
-						if (hostname === 'www.python.org') {
-							// python.org blocks CF IPs :(
-							url = url.replace(
-								'https://www.python.org/ftp/python/',
-								'https://registry.npmmirror.com/-/binary/python/'
-							)
-						}
-						const sha256 = url.split('#')[1]
-						db[sha256] = url
+					url = stripQuotes(url)
+					const { hostname } = new URL(url)
+					if (hostname === 'www.python.org') {
+						// python.org blocks CF IPs :(
+						url = url.replace(
+							'https://www.python.org/ftp/python/',
+							'https://registry.npmmirror.com/-/binary/python/'
+						)
 					}
+					const sha256 = url.split('#')[1]
+					db[sha256] = url
+					foundCount++
 				}
+			}
+			if (foundCount === 0) {
+				throw new Error('no data found')
 			}
 			await fs.writeFile(dbPath, JSON.stringify(db, null, 2))
 		} finally {
 			await $`rm -rf ${repoRoot}/pyenv`
 		}
 	})
-
-// E.g. 3.11.0
-const PyVersion = z.string().regex(/^\d+\.\d+\.\d+$/)
-
-// E.g. 3.11
-const PyVer = z.string().regex(/^\d+\.\d+$/)
-
-function stripQuotes(str: string) {
-	return str.replaceAll('"', '').replaceAll("'", '').trim()
-}
 
 export type PyMirrorDB = z.infer<typeof PyMirrorDB>
 // Record of sha256 to url

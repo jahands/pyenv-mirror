@@ -9,7 +9,8 @@
     "pymirror": "bun run src/index.ts"
   },
   "devDependencies": {
-    "@types/bun": "1.1.6"
+    "@types/bun": "1.1.6",
+    "vitest": "2.0.1"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
