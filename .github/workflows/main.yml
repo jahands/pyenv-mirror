@@ -20,17 +20,14 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      # Runs a single command using the runners shell
-      - uses: actions/setup-python@v2
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access i
+      - uses: earthly/actions-setup@v1.0.13
         with:
-          python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
-          architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
-      - run: |
-          pip install -r requirement.txt
-          python build.py
+          version: v0.8.14
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Build & Sync Pyenv DB
+        run: earthly --ci --push +sync-pyenv-db
 
       - name: Commit files
         run: |
