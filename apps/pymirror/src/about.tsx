@@ -34,11 +34,15 @@ const HomePage: FC = () => {
 				</main>
 				<footer>
 					<p>
-						Made with ❤️ by <a href="https://github.com/jahands/pyenv-mirror">jahands</a>
+						Made with 🧡 by <a href="https://github.com/jahands/pyenv-mirror">jahands</a>
 					</p>
 					<p>
-						Forked from{' '}
-						<a href="https://github.com/S0urceC0der/pyenv-mirror">S0urceC0der/pyenv-mirror</a>
+						<small>
+							<em>
+								Forked from{' '}
+								<a href="https://github.com/S0urceC0der/pyenv-mirror">S0urceC0der/pyenv-mirror</a>
+							</em>
+						</small>
 					</p>
 				</footer>
 			</div>
