@@ -3,9 +3,9 @@
 	"version": "0.1.0",
 	"private": true,
 	"sideEffects": false,
-	"scripts": {
-	},
+	"scripts": {},
 	"devDependencies": {
+		"prettier": "^3.3.2"
 	},
 	"packageManager": "pnpm@9.4.0",
 	"pnpm": {
