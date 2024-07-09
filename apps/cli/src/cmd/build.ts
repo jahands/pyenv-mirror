@@ -35,18 +35,18 @@ export const buildCmd = new Command('build')
 							continue
 						}
 						if (url.includes('${VERSION}')) {
-							const version = lines.find((line) => line.startsWith('VERSION='))
-							if (!version) {
+							const version = PyVersion.safeParse(lines.find((line) => line.startsWith('VERSION=')))
+							if (!version.success) {
 								continue
 							}
-							url = url.replaceAll('${VERSION}', stripQuotes(version.split('=')[1]))
+							url = url.replaceAll('${VERSION}', stripQuotes(version.data.split('=')[1]))
 						}
 						if (url.includes('${PYVER}')) {
-							const pyver = lines.find((line) => line.startsWith('PYVER='))
-							if (!pyver) {
+							const pyver = PyVer.safeParse(lines.find((line) => line.startsWith('PYVER=')))
+							if (!pyver.success) {
 								continue
 							}
-							url = url.replaceAll('${PYVER}', stripQuotes(pyver.split('=')[1]))
+							url = url.replaceAll('${PYVER}', stripQuotes(pyver.data.split('=')[1]))
 						}
 						const { hostname } = new URL(url)
 						if (hostname === 'www.python.org') {
