@@ -1,0 +1,20 @@
+name = "pymirror"
+main = "src/index.ts"
+compatibility_date = "2024-04-03"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+logpush = true
+routes = ["pymirror.com/*"]
+
+[placement]
+mode = "off"
+
+[vars]
+NAME = "pymirror"
+ENVIRONMENT = "production"
+AXIOM_DATASET = "workers"
+AXIOM_DATASET_OTEL = "workers-otel"
+
+[[r2_buckets]]
+binding = "R2"
+bucket_name = "pymirror"
