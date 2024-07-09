@@ -1,5 +1,5 @@
 import { Command } from '@commander-js/extra-typings'
-import { getRepoRoot } from '../helpers'
+import { getRepoRoot } from '../config'
 
 export const syncCmd = new Command('sync')
 	.description('Synchronize pyenv database to R2')

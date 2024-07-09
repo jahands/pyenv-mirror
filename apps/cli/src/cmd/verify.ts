@@ -1,6 +1,6 @@
 import { Command } from '@commander-js/extra-typings'
 import { z } from 'zod'
-import { getRepoRoot } from '../helpers'
+import { getRepoRoot } from '../config'
 
 export const verifyCmd = new Command('verify')
 	.description('Verify pyenv database')
