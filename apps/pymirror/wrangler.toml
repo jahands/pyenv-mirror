@@ -12,8 +12,6 @@ mode = "off"
 [vars]
 NAME = "pymirror"
 ENVIRONMENT = "production"
-AXIOM_DATASET = "workers"
-AXIOM_DATASET_OTEL = "workers-otel"
 
 [[r2_buckets]]
 binding = "R2"
