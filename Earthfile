@@ -42,4 +42,4 @@ sync-pyenv-db:
     --secret RCLONE_S3_ACCESS_KEY_ID \
 		--secret RCLONE_S3_SECRET_ACCESS_KEY \
     rclone --config apps/cli/rclone.conf \
-      copyto api/database.json r2:pymirror/api/database.json
+      copy api/database.json r2:pymirror/api/
