@@ -1,5 +1,5 @@
 {
-	"name": "pymirror",
+	"name": "pymirror-api",
 	"version": "0.1.0",
 	"private": true,
 	"sideEffects": false,

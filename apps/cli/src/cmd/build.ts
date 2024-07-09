@@ -67,6 +67,12 @@ export const buildCmd = new Command('build')
 		}
 	})
 
+// E.g. 3.11.0
+const PyVersion = z.string().regex(/^\d+\.\d+\.\d+$/)
+
+// E.g. 3.11
+const PyVer = z.string().regex(/^\d+\.\d+$/)
+
 function stripQuotes(str: string) {
 	return str.replaceAll('"', '').replaceAll("'", '').trim()
 }
