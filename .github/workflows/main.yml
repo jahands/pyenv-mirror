@@ -11,6 +11,12 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+env:
+  EARTHLY_TOKEN: ${{ secrets.EARTHLY_TOKEN }}
+  EARTHLY_ORG: jahands
+  EARTHLY_SATELLITE: hetz-sat
+  FORCE_COLOR: 1
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
