@@ -32,8 +32,9 @@ install-node-deps:
 	RUN pnpm install --frozen-lockfile --child-concurrency=10
 
 build-pyenv-db:
-  FROM +setup-project
+  FROM +install-node-deps
   RUN python3 build.py
+  RUN bun run apps/cli/src/index.ts verify
   SAVE ARTIFACT api/database.json AS LOCAL api/database.json
 
 sync-pyenv-db:
@@ -42,4 +43,5 @@ sync-pyenv-db:
     --secret RCLONE_S3_ACCESS_KEY_ID \
 		--secret RCLONE_S3_SECRET_ACCESS_KEY \
     rclone --config apps/cli/rclone.conf \
-      copy api/database.json r2:pymirror/api/
+      --s3-no-check-bucket \
+      copyto api/database.json r2:pymirror/api/database.json

@@ -1,5 +1,5 @@
-import 'zx/globals'
 import { Command } from '@commander-js/extra-typings'
+import { getRepoRoot } from '../helpers'
 
 export const syncCmd = new Command('sync')
 	.description('Synchronize pyenv database to R2')
@@ -17,7 +17,3 @@ export const syncCmd = new Command('sync')
 			verbose: true,
 		})`rclone ${args}`
 	})
-
-async function getRepoRoot() {
-	return (await $`git rev-parse --show-toplevel`.text()).trim()
-}
