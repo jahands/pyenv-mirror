@@ -14,7 +14,7 @@ on:
 env:
   EARTHLY_TOKEN: ${{ secrets.EARTHLY_TOKEN }}
   EARTHLY_ORG: jahands
-  EARTHLY_SATELLITE: hetz-sat
+  EARTHLY_SATELLITE: hetz
   FORCE_COLOR: 1
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
