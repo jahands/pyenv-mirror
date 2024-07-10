@@ -8,6 +8,17 @@ import { getAboutPage } from './about'
 const app = new Hono<App>()
 	.get('/', async (c) => getAboutPage(c))
 
+	.get('/favicon.ico', async (c) => {
+		const res = await pRetry(async () => {
+			return await c.env.R2.get('api/favicon.ico')
+		})
+		if (!res) throw Error('unable to fetch favicon')
+		c.header('Cache-Control', 'public, max-age=3600')
+		c.header('Content-Type', 'image/x-icon')
+		c.header('Content-Length', res.size.toString())
+		return c.body(res.body)
+	})
+
 	.get('/dist/python/:sha2', zValidator('param', z.object({ sha2: Sha256 })), async (c) => {
 		const { sha2 } = c.req.valid('param')
 		const db = await getPyMirrorDB(c)
