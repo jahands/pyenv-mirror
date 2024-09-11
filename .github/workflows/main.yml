@@ -2,7 +2,7 @@
 
 name: PyenvVersionSync
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   schedule:
@@ -14,7 +14,7 @@ on:
 env:
   EARTHLY_TOKEN: ${{ secrets.EARTHLY_TOKEN }}
   EARTHLY_ORG: jahands
-  EARTHLY_SATELLITE: hetz
+  EARTHLY_SATELLITE: mini
   FORCE_COLOR: 1
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
