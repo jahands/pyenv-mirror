@@ -30,7 +30,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access i
       - uses: earthly/actions-setup@v1.0.13
         with:
-          version: v0.8.14
+          version: v0.8.15
       - name: Checkout Repo
         uses: actions/checkout@v4
       - name: Build & Sync Pyenv DB
