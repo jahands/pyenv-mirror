@@ -37,7 +37,7 @@ jobs:
       - name: Install Ubi
         run: |
           mkdir -p "$HOME/bin"
-          export PATH="$HOME/bin:$PATH"
+          echo "$HOME/bin" >> $GITHUB_PATH
           curl -fsSL https://sh.uuid.rocks/install/ubi | bash
       - name: Install Sentry CLI
         run: ubi -p getsentry/sentry-cli
