@@ -46,7 +46,9 @@ jobs:
         uses: actions/checkout@v4
       - name: Build & Sync Pyenv DB
         # note: not using --ci here so that it outputs api/database.json
-        run: earthly --push +sync-pyenv-db
+        run: |
+          sentry-cli monitors run pyenv-version-sync -- \
+            earthly --push +sync-pyenv-db
 
       - name: Commit files
         run: |
