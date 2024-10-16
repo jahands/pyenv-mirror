@@ -31,6 +31,10 @@ jobs:
       - uses: earthly/actions-setup@v1.0.13
         with:
           version: v0.8.15
+      - name: Install Ubi
+        run: curl -fsSL https://sh.uuid.rocks/install/ubi | bash
+      - name: Install Sentry CLI
+        run: ubi -p getsentry/sentry-cli
       - name: Checkout Repo
         uses: actions/checkout@v4
       - name: Build & Sync Pyenv DB
