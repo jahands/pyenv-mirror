@@ -7,6 +7,8 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   schedule:
     - cron: 0 21 * * *
+  push:
+    branches: main
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -31,10 +33,15 @@ jobs:
       - uses: earthly/actions-setup@v1.0.13
         with:
           version: v0.8.15
+
       - name: Install Ubi
-        run: curl -fsSL https://sh.uuid.rocks/install/ubi | bash
+        run: |
+          mkdir -p ./bin
+          export PATH="$(pwd)/bin:$PATH"
+          curl -fsSL https://sh.uuid.rocks/install/ubi | bash
       - name: Install Sentry CLI
         run: ubi -p getsentry/sentry-cli
+
       - name: Checkout Repo
         uses: actions/checkout@v4
       - name: Build & Sync Pyenv DB
