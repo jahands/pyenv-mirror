@@ -2,24 +2,23 @@ VERSION --raw-output 0.8
 PROJECT jahands/docker
 
 prepare-workspace:
-	FROM --platform=linux/amd64 node:22-bookworm-slim
+	FROM debian:bookworm-slim
 	WORKDIR /work
-	RUN apt-get update \
-		&& apt-get install -y \
+	RUN apt-get update && \
+		apt-get install -y \
 			jq \
 			git \
 			curl \
 			unzip \
 			python3 \
 			python3-pip \
-			pipx \
-		&& rm -rf /var/lib/apt/lists/*
-	RUN curl -fsSL https://sh.uuid.rocks/install/rclone.sh | bash
-	LET BUN_INSTALL=/usr/local
-	RUN curl -fsSL https://sh.uuid.rocks/install/bun.sh | bash -s "bun-v1.1.30"
+			pipx && \
+		rm -rf /var/lib/apt/lists/*
 
-	RUN corepack prepare pnpm@latest-9 --activate
-	RUN corepack enable pnpm
+	RUN curl -fsSL https://sh.uuid.rocks/install/mise | bash
+	ENV PATH="$HOME/.local/share/mise/shims:$HOME/.local/bin:$PATH"
+	COPY .mise.toml .
+	RUN mise install --yes && mise reshim
 
 setup-project:
 	FROM +prepare-workspace
