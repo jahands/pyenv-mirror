@@ -40,7 +40,7 @@ jobs:
           echo "$HOME/bin" >> $GITHUB_PATH
           curl -fsSL https://sh.uuid.rocks/install/ubi | bash
       - name: Install Sentry CLI
-        run: ubi -p getsentry/sentry-cli
+        run: ubi -p getsentry/sentry-cli -i "$HOME/bin"
 
       - name: Checkout Repo
         uses: actions/checkout@v4
