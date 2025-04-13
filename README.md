@@ -2,7 +2,7 @@
 
 https://pymirror.com/
 
-Pyenv is a simple and powerfull python version and environment management tool. Unfortuanlly python source files download speed is very slow in china during the installion of python with pyenv, so I create this mirror to speedup the download. 
+Pyenv is a simple and powerful python version and environment management tool. Unfortunately python source files download speed is very slow in china during the installation of python with pyenv, so I created this mirror to speedup the download. 
 
 ## Usage
 
