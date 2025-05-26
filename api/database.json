@@ -100,8 +100,6 @@
   "dffbc0561a161a4a576c6059e6990a9859a0be16ba9b5736eabe4abbb2700d1c": "https://registry.npmmirror.com/-/binary/python/3.1.2/Python-3.1.2.tgz#dffbc0561a161a4a576c6059e6990a9859a0be16ba9b5736eabe4abbb2700d1c",
   "5bf42dbf406fd58a41029f53cffff1c90db5de1c5e0e560b5545cf2ec949c431": "https://pypi.python.org/packages/source/s/setuptools/setuptools-17.1.1.tar.gz#5bf42dbf406fd58a41029f53cffff1c90db5de1c5e0e560b5545cf2ec949c431",
   "b1a4ae66baf21b7eb05a5e4f37c50c2706fa28ea1f8780ce8efe14dcd9f1726c": "https://pypi.python.org/packages/source/p/pip/pip-1.5.6.tar.gz#b1a4ae66baf21b7eb05a5e4f37c50c2706fa28ea1f8780ce8efe14dcd9f1726c",
-  "2ddd30a77c9f62e065ce648664a254b9b0c011bcdaa8c1c2787087e644cbeb39": "https://registry.npmmirror.com/-/binary/python/3.14.0/Python-3.14.0b1.tar.xz#2ddd30a77c9f62e065ce648664a254b9b0c011bcdaa8c1c2787087e644cbeb39",
-  "d6c4473fce72fb6b881c1f50fbfcf157be2caa56102f01bd9dda8a459b880a37": "https://registry.npmmirror.com/-/binary/python/3.14.0/Python-3.14.0b1.tgz#d6c4473fce72fb6b881c1f50fbfcf157be2caa56102f01bd9dda8a459b880a37",
   "dfb9d005f0fc917edc60fd618143e4934c412f9168b55166f5519ba0a3b1a835": "https://downloads.python.org/pypy/pypy3.8-v7.3.7-linux32.tar.bz2#dfb9d005f0fc917edc60fd618143e4934c412f9168b55166f5519ba0a3b1a835",
   "5dee37c7c3cb8b160028fbde3a5901c68043dfa545a16794502b897d4bc40d7e": "https://downloads.python.org/pypy/pypy3.8-v7.3.7-linux64.tar.bz2#5dee37c7c3cb8b160028fbde3a5901c68043dfa545a16794502b897d4bc40d7e",
   "cbd44e0a9146b3c03a9d14b265774a848f387ed846316c3e984847e278d0efd3": "https://downloads.python.org/pypy/pypy3.8-v7.3.7-aarch64.tar.bz2#cbd44e0a9146b3c03a9d14b265774a848f387ed846316c3e984847e278d0efd3",
@@ -943,5 +941,7 @@
   "41f959c480c59211feb55d5a28851a56c7e22d02ef91035606ebb21011723c31": "https://registry.npmmirror.com/-/binary/python/3.8.14/Python-3.8.14.tgz#41f959c480c59211feb55d5a28851a56c7e22d02ef91035606ebb21011723c31",
   "4ac1733c19d014d3193c804e7f40ffccbf6924bcaaee1b6089b82b9bf9353a6d": "https://downloads.python.org/pypy/pypy3.10-v7.3.13-src.tar.bz2#4ac1733c19d014d3193c804e7f40ffccbf6924bcaaee1b6089b82b9bf9353a6d",
   "0cdad270c62d3ccc53cc87eeb069a6dc46acaf95521b584624bcd6697d94fa1c": "https://downloads.python.org/pypy/pypy2.7-v7.3.8-src.tar.bz2#0cdad270c62d3ccc53cc87eeb069a6dc46acaf95521b584624bcd6697d94fa1c",
-  "6ae6f67a388a7f70ed3a20eebab5aae995ee433089d1f1724095c62f4b7389a1": "https://registry.npmmirror.com/-/binary/python/2.4.5/Python-2.4.5.tgz#6ae6f67a388a7f70ed3a20eebab5aae995ee433089d1f1724095c62f4b7389a1"
+  "6ae6f67a388a7f70ed3a20eebab5aae995ee433089d1f1724095c62f4b7389a1": "https://registry.npmmirror.com/-/binary/python/2.4.5/Python-2.4.5.tgz#6ae6f67a388a7f70ed3a20eebab5aae995ee433089d1f1724095c62f4b7389a1",
+  "7ac9e84844bbc0a5a8f1f79a37a68b3b8caf2a58b4aa5999c49227cb36e70ea6": "https://registry.npmmirror.com/-/binary/python/3.14.0/Python-3.14.0b2.tar.xz#7ac9e84844bbc0a5a8f1f79a37a68b3b8caf2a58b4aa5999c49227cb36e70ea6",
+  "395e0daf993ddd6010dddef9ac6851996f69c2681a88c20190fa0dfe3e633930": "https://registry.npmmirror.com/-/binary/python/3.14.0/Python-3.14.0b2.tgz#395e0daf993ddd6010dddef9ac6851996f69c2681a88c20190fa0dfe3e633930"
 }
