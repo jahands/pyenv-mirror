@@ -111,8 +111,8 @@ export class PyenvMirror {
 	): Promise<Container> {
 		const [deps, build] = await Promise.all([this.installDeps(), this.buildPyenvDB()])
 
-		const con = this.withEnv(deps)
 		const dbFile = build.file('/work/api/database.json')
+		const con = this.withEnv(deps)
 
 		return con.withFile('/work/database.json', dbFile).withExec(
 			sh(
