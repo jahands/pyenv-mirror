@@ -1,0 +1,13 @@
+{
+	"name": "pyenv-mirror-dagger",
+	"type": "module",
+	"main": "src/main.dagger.ts",
+	"dependencies": {
+		"@dagger.io/dagger": "^0.18.14",
+		"@jahands/dagger-helpers": "^0.4.0"
+	},
+	"packageManager": "bun@1.2.10",
+	"dagger": {
+		"runtime": "bun@1.2.10"
+	}
+}

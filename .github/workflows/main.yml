@@ -21,33 +21,38 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access i
-      - uses: earthly/actions-setup@v1.0.13
-        with:
-          version: v0.8.15
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+
+      - name: Install Dagger
+        run: |
+          cd /usr/local/bin
+          curl -L https://dl.dagger.io/dagger/install.sh | sudo sh
 
       - name: Install Ubi
         run: |
           mkdir -p "$HOME/bin"
           echo "$HOME/bin" >> $GITHUB_PATH
           curl -fsSL https://sh.uuid.rocks/install/ubi | bash
+
       - name: Install Sentry CLI
         run: ubi -p getsentry/sentry-cli -i "$HOME/bin"
 
-      - name: Checkout Repo
-        uses: actions/checkout@v4
-
       - name: Build & Sync Pyenv DB
         env:
-          EARTHLY_TOKEN: ${{ secrets.EARTHLY_TOKEN }}
-          EARTHLY_ORG: jahands
-          EARTHLY_SATELLITE: mini-sat
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           FORCE_COLOR: 1
           SENTRY_DSN: ${{ secrets.SENTRY_DSN }}
-        # note: not using --ci here so that it outputs api/database.json
         run: |
           sentry-cli monitors run pyenv-version-sync -- \
-            earthly --push +sync-pyenv-db
+            dagger call sync-pyenv-db \
+              --AWS_ACCESS_KEY_ID=env:AWS_ACCESS_KEY_ID \
+              --AWS_SECRET_ACCESS_KEY=env:AWS_SECRET_ACCESS_KEY
+          
+          # Export database.json for git commit
+          dagger call buildPyenvDb export --path=api/
 
       - name: Commit files
         run: |

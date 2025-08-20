@@ -2,7 +2,4 @@
 pnpm = '9.12.1'
 node = '22'
 bun = '1'
-rclone = '1.68.1'
-
-[alias]
-rclone = 'asdf:https://github.com/johnlayton/asdf-rclone.git#6a87924297fbafcc2d595c24ee200cb3ca477d46'
+rclone = "1.70.3"
