@@ -3,7 +3,6 @@
 	"type": "module",
 	"main": "src/main.dagger.ts",
 	"dependencies": {
-		"@dagger.io/dagger": "0.18.16",
 		"@jahands/dagger-helpers": "0.4.0",
 		"llm-tools": "0.2.1",
 		"typescript": "5.9.2"

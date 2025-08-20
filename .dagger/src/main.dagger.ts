@@ -24,24 +24,22 @@ export class PyenvMirror {
 		@argument({
 			defaultPath: '/',
 			ignore: [
+				// dirs
 				'**/node_modules/',
-				'**/.env',
-				'**/*.env',
 				'**/.turbo/',
 				'**/dist/',
-				'**/.DS_Store',
 				'**/dagger/sdk/',
 				'**/.dagger/sdk/',
+
+				// files
+				'**/.env',
+				'**/*.env',
+				'**/.DS_Store',
 			],
 		})
 		source: Directory
 	) {
 		this.source = source
-	}
-
-	@func()
-	getSource(): Directory {
-		return this.source
 	}
 
 	@func()
