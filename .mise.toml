@@ -3,3 +3,4 @@ pnpm   = '9.12.1'
 node   = '22'
 bun    = '1'
 rclone = "1.70.3"
+dagger = "0.18.16"
