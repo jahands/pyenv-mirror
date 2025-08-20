@@ -92,37 +92,33 @@ export class PyenvMirror {
 	}
 
 	@func()
-	async buildPyenvDB(): Promise<Container> {
+	async buildPyenvDB(): Promise<File> {
 		const con = (await this.installDeps())
 			.withExec(sh('bun run apps/cli/src/index.ts build'))
 			.withExec(sh('bun run apps/cli/src/index.ts verify'))
 
-		// note: the actual export path here is meaningless
-		await con.file('/work/api/database.json').export('./api/database.json')
-
-		return con
+		return con.file('/work/api/database.json')
 	}
 
 	@func()
 	@ParamsToEnv()
-	async syncPyenvDB(
-		AWS_ACCESS_KEY_ID?: Secret,
-		AWS_SECRET_ACCESS_KEY?: Secret
-	): Promise<Container> {
-		const [deps, build] = await Promise.all([this.installDeps(), this.buildPyenvDB()])
+	async syncPyenvDB(AWS_ACCESS_KEY_ID?: Secret, AWS_SECRET_ACCESS_KEY?: Secret): Promise<File> {
+		const [deps, dbFile] = await Promise.all([this.installDeps(), this.buildPyenvDB()])
 
-		const dbFile = build.file('/work/api/database.json')
-		const con = this.withEnv(deps)
-
-		return con.withFile('/work/database.json', dbFile).withExec(
-			sh(
-				fmt.oneLine(`
+		await this.withEnv(deps)
+			.withFile('/work/database.json', dbFile)
+			.withExec(
+				sh(
+					fmt.oneLine(`
 						rclone --config apps/cli/rclone.conf
 							--s3-no-check-bucket
 							copyto database.json r2:pymirror/api/database.json
 					`)
+				)
 			)
-		)
+			.sync()
+
+		return dbFile
 	}
 
 	// =============================== //
