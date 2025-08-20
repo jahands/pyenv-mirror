@@ -5,6 +5,15 @@
 	"sdk": {
 		"source": "typescript"
 	},
-	"include": ["!**/node_modules/", "!**/.turbo/", "!**/dist/"],
+	"include": [
+		"!**/node_modules/",
+		"!**/.turbo/",
+		"!**/dist/",
+		"!**/.env",
+		"!**/*.env",
+		"!**/.DS_Store",
+		"!**/dagger/sdk/",
+		"!**/.dagger/sdk/"
+	],
 	"source": ".dagger"
 }

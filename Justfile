@@ -24,3 +24,6 @@ dagger-dev:
 # Initialize/update Dagger dependencies
 dagger-init:
   cd .dagger && npm install
+
+fix:
+  bun prettier --cache --write .

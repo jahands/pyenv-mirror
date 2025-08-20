@@ -14,7 +14,6 @@ const projectIncludes: string[] = [
 	'package.json',
 	'pnpm-lock.yaml',
 	'pnpm-workspace.yaml',
-	'tsconfig.json',
 ]
 
 @object()
@@ -28,7 +27,6 @@ export class PyenvMirror {
 				'**/node_modules/',
 				'**/.env',
 				'**/*.env',
-				'**/.secret',
 				'**/.turbo/',
 				'**/dist/',
 				'**/.DS_Store',
@@ -78,12 +76,7 @@ export class PyenvMirror {
 		let con = workspace
 			// copy over minimal files needed for installing tools/deps
 			.withDirectory('/work', this.source.directory('/'), {
-				include: [
-					'pnpm-lock.yaml',
-					'pnpm-workspace.yaml',
-					'package.json',
-					'**/package.json',
-				],
+				include: ['pnpm-lock.yaml', 'pnpm-workspace.yaml', 'package.json', '**/package.json'],
 			})
 
 			// install pnpm deps
@@ -110,10 +103,7 @@ export class PyenvMirror {
 
 	@func()
 	@ParamsToEnv()
-	async syncPyenvDb(
-		AWS_ACCESS_KEY_ID?: Secret,
-		AWS_SECRET_ACCESS_KEY?: Secret
-	): Promise<void> {
+	async syncPyenvDb(AWS_ACCESS_KEY_ID?: Secret, AWS_SECRET_ACCESS_KEY?: Secret): Promise<void> {
 		const con = this.withEnv(await this.installDeps())
 		const dbDir = await this.buildPyenvDb()
 
