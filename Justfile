@@ -6,7 +6,7 @@ set shell := ["bash", "-c"]
 
 # Build the pyenv database locally
 build:
-  dagger call build-pyenv-db
+  dagger call build-pyenv-db export --path=./api/database.json
 
 # Sync the pyenv database to R2 (requires AWS credentials)
 sync:
