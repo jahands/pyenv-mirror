@@ -1,5 +1,5 @@
 [tools]
-pnpm = '9.12.1'
-node = '22'
-bun = '1'
+pnpm   = '9.12.1'
+node   = '22'
+bun    = '1'
 rclone = "1.70.3"
