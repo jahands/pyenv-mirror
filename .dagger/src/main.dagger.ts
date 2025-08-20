@@ -92,25 +92,24 @@ export class PyenvMirror {
 	}
 
 	@func()
-	async buildPyenvDB(exportPath?: string): Promise<File> {
+	async buildPyenvDB(): Promise<Container> {
 		const con = (await this.installDeps())
 			.withExec(sh('bun run apps/cli/src/index.ts build'))
 			.withExec(sh('bun run apps/cli/src/index.ts verify'))
 
-		const dbFile = con.file('/work/api/database.json')
+		// note: the actual export path here is meaningless
+		await con.file('/work/api/database.json').export('./api/database.json')
 
-		if (exportPath) {
-			await dbFile.export(exportPath)
-		}
-
-		return dbFile
+		return con
 	}
 
 	@func()
 	@ParamsToEnv()
 	async syncPyenvDB(AWS_ACCESS_KEY_ID?: Secret, AWS_SECRET_ACCESS_KEY?: Secret): Promise<void> {
-		const con = this.withEnv(await this.installDeps())
-		const dbFile = await this.buildPyenvDB()
+		const [deps, build] = await Promise.all([this.installDeps(), this.buildPyenvDB()])
+
+		const con = this.withEnv(deps)
+		const dbFile = build.file('/work/api/database.json')
 
 		await con
 			.withFile('/work/database.json', dbFile)
