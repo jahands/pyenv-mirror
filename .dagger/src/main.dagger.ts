@@ -1,6 +1,6 @@
 import { argument, Container, dag, Directory, func, object, Secret } from '@dagger.io/dagger'
 import { envStorage, ParamsToEnv, shell } from '@jahands/dagger-helpers'
-
+import { fmt } from 'llm-tools'
 const sh = shell('bash')
 
 const projectIncludes: string[] = [
@@ -48,7 +48,7 @@ export class PyenvMirror {
 	async setupWorkspace(): Promise<Container> {
 		return dag
 			.container()
-			.from('debian:bookworm-slim')
+			.from('public.ecr.aws/debian/debian:12-slim')
 			.withWorkdir('/work')
 			.withEnvVariable('HOME', '/root')
 			.withExec(
@@ -60,7 +60,7 @@ export class PyenvMirror {
 					].join(' && ')
 				)
 			)
-			.withExec(sh('curl -fsSL https://sh.uuid.rocks/install/mise | bash'))
+			.withExec(sh('curl -fsSL https://sh.uuid.rocks/install/mise | MISE_VERSION=v2025.8.13 bash'))
 			.withEnvVariable('PATH', '$HOME/.local/share/mise/shims:$HOME/.local/bin:$PATH', {
 				expand: true,
 			})
@@ -91,7 +91,7 @@ export class PyenvMirror {
 	}
 
 	@func()
-	async buildPyenvDb(): Promise<Directory> {
+	async buildPyenvDB(): Promise<Directory> {
 		const con = await this.installDeps()
 
 		const result = con
@@ -103,15 +103,19 @@ export class PyenvMirror {
 
 	@func()
 	@ParamsToEnv()
-	async syncPyenvDb(AWS_ACCESS_KEY_ID?: Secret, AWS_SECRET_ACCESS_KEY?: Secret): Promise<void> {
+	async syncPyenvDB(AWS_ACCESS_KEY_ID?: Secret, AWS_SECRET_ACCESS_KEY?: Secret): Promise<void> {
 		const con = this.withEnv(await this.installDeps())
-		const dbDir = await this.buildPyenvDb()
+		const dbDir = await this.buildPyenvDB()
 
 		await con
 			.withFile('/work/database.json', dbDir.file('database.json'))
 			.withExec(
 				sh(
-					'rclone --config apps/cli/rclone.conf --s3-no-check-bucket copyto database.json r2:pymirror/api/database.json'
+					fmt.oneLine(`
+						rclone --config apps/cli/rclone.conf
+							--s3-no-check-bucket
+							copyto database.json r2:pymirror/api/database.json
+					`)
 				)
 			)
 			.sync()
