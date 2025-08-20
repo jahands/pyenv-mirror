@@ -1,7 +1,9 @@
 import { Context } from 'hono'
-import type { FC } from 'hono/jsx'
 import { css, Style } from 'hono/css'
+
 import { App } from './types'
+
+import type { FC } from 'hono/jsx'
 
 export async function getAboutPage(c: Context<App>): Promise<Response> {
 	return c.html(<HomePage />)

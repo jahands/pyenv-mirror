@@ -1,4 +1,5 @@
 import { Command } from '@commander-js/extra-typings'
+
 import { getRepoRoot } from '../config'
 
 export const syncCmd = new Command('sync')

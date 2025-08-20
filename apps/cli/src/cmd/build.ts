@@ -1,5 +1,6 @@
 import { Command } from '@commander-js/extra-typings'
 import { z } from 'zod'
+
 import { getRepoRoot } from '../config'
 import { resolveScriptVars, stripQuotes } from '../var-resolver'
 

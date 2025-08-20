@@ -1,5 +1,7 @@
 import 'zx/globals'
-import { describe, it, test, expect } from 'vitest'
+
+import { describe, expect, it, test } from 'vitest'
+
 import { resolveScriptVars, stripQuotes } from './var-resolver'
 
 describe('resolveScriptVars', () => {
