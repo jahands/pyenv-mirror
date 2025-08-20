@@ -5,15 +5,18 @@ const sh = shell('bash')
 
 const projectIncludes: string[] = [
 	// dirs
+	'.git/',
 	'apps/',
 	'api/',
 
 	// files
 	'.gitignore',
 	'.mise.toml',
+	'.prettierrc.cjs',
 	'package.json',
 	'pnpm-lock.yaml',
 	'pnpm-workspace.yaml',
+	'tsconfig.json',
 ]
 
 @object()
