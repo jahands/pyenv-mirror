@@ -45,8 +45,8 @@ jobs:
         run: |
           sentry-cli monitors run pyenv-version-sync -- \
             dagger call sync-pyenv-db \
-              --AWS_ACCESS_KEY_ID=env:AWS_ACCESS_KEY_ID \
-              --AWS_SECRET_ACCESS_KEY=env:AWS_SECRET_ACCESS_KEY
+              --AWS_ACCESS_KEY_ID=env://AWS_ACCESS_KEY_ID \
+              --AWS_SECRET_ACCESS_KEY=env://AWS_SECRET_ACCESS_KEY
 
           # Export database.json for git commit
           dagger call build-pyenv-db export --path=api/
