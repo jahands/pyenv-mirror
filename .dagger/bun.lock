@@ -5,16 +5,15 @@
       "name": "pyenv-mirror-dagger",
       "dependencies": {
         "@dagger.io/dagger": "^0.18.14",
-        "@jahands/dagger-helpers": "^0.4.0",
-      },
-      "devDependencies": {
-        "@types/node": "^18.15.3",
-        "typescript": "^5.0.0",
+        "@jahands/dagger-helpers": "0.4.0",
+        "llm-tools": "0.2.1",
       },
     },
   },
   "packages": {
     "@dagger.io/dagger": ["@dagger.io/dagger@0.18.16", "", { "dependencies": { "@grpc/grpc-js": "^1.13.4", "@lifeomic/axios-fetch": "^3.1.0", "@opentelemetry/api": "^1.9.0", "@opentelemetry/core": "^2.0.1", "@opentelemetry/exporter-trace-otlp-http": "^0.202.0", "@opentelemetry/sdk-metrics": "^2.0.1", "@opentelemetry/sdk-node": "^0.202.0", "@opentelemetry/semantic-conventions": "^1.34.0", "adm-zip": "^0.5.16", "env-paths": "^3.0.0", "execa": "^9.6.0", "graphql": "^16.11.0", "graphql-request": "^7.2.0", "graphql-tag": "^2.12.6", "node-color-log": "^12.0.1", "node-fetch": "^3.3.2", "reflect-metadata": "^0.2.2", "tar": "^7.4.2", "typescript": "^5.8.3" } }, "sha512-RnYxHbHVsCdnXhuzv8Q4pzR/WaJ389WSMSFPgrER8/SIDhn/q+hxE1Ag5/+7VYkvankJTaKvpWw0NhLVVpvUXg=="],
+
+    "@fast-csv/format": ["@fast-csv/format@5.0.0", "", { "dependencies": { "lodash.escaperegexp": "^4.1.2", "lodash.isboolean": "^3.0.3", "lodash.isequal": "^4.5.0", "lodash.isfunction": "^3.0.9", "lodash.isnil": "^4.0.0" } }, "sha512-IyMpHwYIOGa2f0BJi6Wk55UF0oBA5urdIydoEDYxPo88LFbeb3Yr4rgpu98OAO1glUWheSnNtUgS80LE+/dqmw=="],
 
     "@graphql-typed-document-node/core": ["@graphql-typed-document-node/core@3.2.0", "", { "peerDependencies": { "graphql": "^0.8.0 || ^0.9.0 || ^0.10.0 || ^0.11.0 || ^0.12.0 || ^0.13.0 || ^14.0.0 || ^15.0.0 || ^16.0.0 || ^17.0.0" } }, "sha512-mB9oAsNCm9aM3/SOv4YtBMqZbYj10R7dkq8byBqxGY/ncFwhf2oQzMV+LCRlWoDSEBJ3COiR1yeDvMtsoOsuFQ=="],
 
@@ -216,7 +215,19 @@
 
     "isexe": ["isexe@2.0.0", "", {}, "sha512-RHxMLp9lnKHGHRng9QFhRCMbYAcVpn69smSGcq3f36xjgVVWThj4qqLbTLlq7Ssj8B+fIQ1EuCEGI2lKsyQeIw=="],
 
+    "llm-tools": ["llm-tools@0.2.1", "", { "dependencies": { "@fast-csv/format": "5.0.0" }, "peerDependencies": { "typescript": "^5.5.4" } }, "sha512-lUX7lKjIjmUYknNxw/gDnMX/xojay6IezloR8Khc7nhn3WvYzyaixYziNIYLrAPvSYqJb28F7iKav/UTqdGi3g=="],
+
     "lodash.camelcase": ["lodash.camelcase@4.3.0", "", {}, "sha512-TwuEnCnxbc3rAvhf/LbG7tJUDzhqXyFnv3dtzLOPgCG/hODL7WFnsbwktkD7yUV0RrreP/l1PALq/YSg6VvjlA=="],
+
+    "lodash.escaperegexp": ["lodash.escaperegexp@4.1.2", "", {}, "sha512-TM9YBvyC84ZxE3rgfefxUWiQKLilstD6k7PTGt6wfbtXF8ixIJLOL3VYyV/z+ZiPLsVxAsKAFVwWlWeb2Y8Yyw=="],
+
+    "lodash.isboolean": ["lodash.isboolean@3.0.3", "", {}, "sha512-Bz5mupy2SVbPHURB98VAcw+aHh4vRV5IPNhILUCsOzRmsTmSQ17jIuqopAentWoehktxGd9e/hbIXq980/1QJg=="],
+
+    "lodash.isequal": ["lodash.isequal@4.5.0", "", {}, "sha512-pDo3lu8Jhfjqls6GkMgpahsF9kCyayhgykjyLMNFTKWrpVdAQtYyB4muAMWozBB4ig/dtWAmsMxLEI8wuz+DYQ=="],
+
+    "lodash.isfunction": ["lodash.isfunction@3.0.9", "", {}, "sha512-AirXNj15uRIMMPihnkInB4i3NHeb4iBtNg9WRWuK2o31S+ePwwNmDPaTL3o7dTJ+VXNZim7rFs4rxN4YU1oUJw=="],
+
+    "lodash.isnil": ["lodash.isnil@4.0.0", "", {}, "sha512-up2Mzq3545mwVnMhTDMdfoG1OurpA/s5t88JmQX809eH3C8491iu2sfKhTfhQtKY78oPNhiaHJUpT/dUDAAtng=="],
 
     "long": ["long@5.3.2", "", {}, "sha512-mNAgZ1GmyNhD7AuqnTG3/VQ26o760+ZYBPKjPvugO8+nLbYfX6TVpJPseBvopbdY+qpZ/lKUnmEc1LeZYS3QAA=="],
 

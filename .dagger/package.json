@@ -4,7 +4,8 @@
 	"main": "src/main.dagger.ts",
 	"dependencies": {
 		"@dagger.io/dagger": "^0.18.14",
-		"@jahands/dagger-helpers": "^0.4.0"
+		"@jahands/dagger-helpers": "0.4.0",
+		"llm-tools": "0.2.1"
 	},
 	"packageManager": "bun@1.2.10",
 	"dagger": {
