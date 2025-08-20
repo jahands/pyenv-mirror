@@ -49,9 +49,6 @@ jobs:
               --AWS_SECRET_ACCESS_KEY=env://AWS_SECRET_ACCESS_KEY \
               export --path=./api/database.json
 
-          # Export database.json for git commit
-          dagger call build-pyenv-db export --path=api/
-
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
