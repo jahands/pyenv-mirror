@@ -105,24 +105,24 @@ export class PyenvMirror {
 
 	@func()
 	@ParamsToEnv()
-	async syncPyenvDB(AWS_ACCESS_KEY_ID?: Secret, AWS_SECRET_ACCESS_KEY?: Secret): Promise<void> {
+	async syncPyenvDB(
+		AWS_ACCESS_KEY_ID?: Secret,
+		AWS_SECRET_ACCESS_KEY?: Secret
+	): Promise<Container> {
 		const [deps, build] = await Promise.all([this.installDeps(), this.buildPyenvDB()])
 
 		const con = this.withEnv(deps)
 		const dbFile = build.file('/work/api/database.json')
 
-		await con
-			.withFile('/work/database.json', dbFile)
-			.withExec(
-				sh(
-					fmt.oneLine(`
+		return con.withFile('/work/database.json', dbFile).withExec(
+			sh(
+				fmt.oneLine(`
 						rclone --config apps/cli/rclone.conf
 							--s3-no-check-bucket
 							copyto database.json r2:pymirror/api/database.json
 					`)
-				)
 			)
-			.sync()
+		)
 	}
 
 	// =============================== //
