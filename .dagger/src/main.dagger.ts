@@ -1,4 +1,4 @@
-import { argument, Container, dag, Directory, func, object, Secret } from '@dagger.io/dagger'
+import { argument, Container, dag, Directory, File, func, object, Secret } from '@dagger.io/dagger'
 import { envStorage, ParamsToEnv, shell } from '@jahands/dagger-helpers'
 import { fmt } from 'llm-tools'
 const sh = shell('bash')
@@ -92,24 +92,28 @@ export class PyenvMirror {
 	}
 
 	@func()
-	async buildPyenvDB(): Promise<Directory> {
-		const con = await this.installDeps()
-
-		const result = con
+	async buildPyenvDB(exportPath?: string): Promise<File> {
+		const con = (await this.installDeps())
 			.withExec(sh('bun run apps/cli/src/index.ts build'))
 			.withExec(sh('bun run apps/cli/src/index.ts verify'))
 
-		return result.directory('/work/api')
+		const dbFile = con.file('/work/api/database.json')
+
+		if (exportPath) {
+			await dbFile.export(exportPath)
+		}
+
+		return dbFile
 	}
 
 	@func()
 	@ParamsToEnv()
 	async syncPyenvDB(AWS_ACCESS_KEY_ID?: Secret, AWS_SECRET_ACCESS_KEY?: Secret): Promise<void> {
 		const con = this.withEnv(await this.installDeps())
-		const dbDir = await this.buildPyenvDB()
+		const dbFile = await this.buildPyenvDB()
 
 		await con
-			.withFile('/work/database.json', dbDir.file('database.json'))
+			.withFile('/work/database.json', dbFile)
 			.withExec(
 				sh(
 					fmt.oneLine(`
