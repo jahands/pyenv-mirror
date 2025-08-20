@@ -7,8 +7,8 @@
 		"@jahands/dagger-helpers": "0.4.0",
 		"llm-tools": "0.2.1"
 	},
-	"packageManager": "bun@1.2.10",
+	"packageManager": "bun@1.2.20",
 	"dagger": {
-		"runtime": "bun@1.2.10"
+		"runtime": "bun@1.2.20"
 	}
 }
