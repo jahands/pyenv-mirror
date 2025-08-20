@@ -71,7 +71,7 @@ export class PyenvMirror {
 	async installDeps(): Promise<Container> {
 		const workspace = await this.setupWorkspace()
 
-		let con = workspace
+		const con = workspace
 			// copy over minimal files needed for installing tools/deps
 			.withDirectory('/work', this.source.directory('/'), {
 				include: ['pnpm-lock.yaml', 'pnpm-workspace.yaml', 'package.json', '**/package.json'],
