@@ -1,24 +1,24 @@
 {
-  "name": "pymirror-cli",
-  "module": "src/index.ts",
-  "type": "module",
-  "scripts": {
-    "cli": "bun run src/index.ts"
-  },
-  "bin": {
-    "pymirror": "bun run src/index.ts"
-  },
-  "devDependencies": {
-    "@types/bun": "1.1.6",
-    "vitest": "2.0.1"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "@commander-js/extra-typings": "^12.1.0",
-    "commander": "^12.1.0",
-    "zod": "^3.23.8",
-    "zx": "^8.1.4"
-  }
+	"name": "pymirror-cli",
+	"type": "module",
+	"module": "src/index.ts",
+	"bin": {
+		"pymirror": "bun run src/index.ts"
+	},
+	"scripts": {
+		"cli": "bun run src/index.ts"
+	},
+	"dependencies": {
+		"@commander-js/extra-typings": "^12.1.0",
+		"commander": "^12.1.0",
+		"zod": "^3.23.8",
+		"zx": "^8.1.4"
+	},
+	"devDependencies": {
+		"@types/bun": "1.1.6",
+		"vitest": "2.0.1"
+	},
+	"peerDependencies": {
+		"typescript": "^5.0.0"
+	}
 }

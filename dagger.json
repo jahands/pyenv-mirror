@@ -1,0 +1,19 @@
+{
+	"$schema": "https://docs.dagger.io/reference/dagger.schema.json",
+	"name": "pyenv-mirror",
+	"engineVersion": "v0.18.16",
+	"sdk": {
+		"source": "typescript"
+	},
+	"include": [
+		"!**/node_modules/",
+		"!**/.turbo/",
+		"!**/dist/",
+		"!**/.env",
+		"!**/*.env",
+		"!**/.DS_Store",
+		"!**/dagger/sdk/",
+		"!**/.dagger/sdk/"
+	],
+	"source": ".dagger"
+}

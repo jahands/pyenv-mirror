@@ -1,9 +1,10 @@
-import { Context, Hono } from 'hono'
 import { zValidator } from '@hono/zod-validator'
-import { z } from 'zod'
+import { Context, Hono } from 'hono'
 import pRetry from 'p-retry'
-import { App, PyMirrorDB, Sha256 } from './types'
+import { z } from 'zod'
+
 import { getAboutPage } from './about'
+import { App, PyMirrorDB, Sha256 } from './types'
 
 const app = new Hono<App>()
 	.get('/', async (c) => getAboutPage(c))

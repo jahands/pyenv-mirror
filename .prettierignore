@@ -1,0 +1,7 @@
+# dirs
+/.claude/
+/api/database.json
+
+# files
+*.lock
+pnpm-lock.yaml

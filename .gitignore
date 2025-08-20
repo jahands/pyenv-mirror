@@ -129,6 +129,9 @@ dmypy.json
 
 .now
 
+# dagger
+**/.dagger/sdk/
+
 # Other
 .DS_Store
 node_modules
