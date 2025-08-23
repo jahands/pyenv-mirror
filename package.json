@@ -10,5 +10,5 @@
 		"prettier-plugin-toml": "2.0.6",
 		"syncpack": "13.0.4"
 	},
-	"packageManager": "pnpm@9.12.1"
+	"packageManager": "pnpm@10.15.0"
 }
