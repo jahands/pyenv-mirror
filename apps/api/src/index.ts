@@ -54,7 +54,7 @@ const app = new Hono<App>()
 			})
 			if (res.ok) {
 				c.header('Cache-Control', 'public, max-age=31536000') // 1 year
-				return c.body(res.body, res)
+				return c.newResponse(res.body, res)
 			}
 		}
 	)
