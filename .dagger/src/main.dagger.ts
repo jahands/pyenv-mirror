@@ -81,7 +81,7 @@ export class PyenvMirror {
 			})
 
 			// install pnpm deps
-			// disabled cache for now because we're running on Blacksmith which doesn't persist anyway
+			// disabled cache for now because we're running on ubicloud which doesn't persist anyway
 			// .withMountedCache('/pnpm-store', dag.cacheVolume('pnpm-store'))
 			.withExec(sh('pnpm config set store-dir /pnpm-store'))
 			.withExec(sh('FORCE_COLOR=1 pnpm install --frozen-lockfile --child-concurrency=10'))
